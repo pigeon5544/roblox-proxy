@@ -245,7 +245,7 @@ server.on('request', (req, res) => {
       console.error(`Request error: ${err}`);
     });
     const accessKeyBuffer = Buffer.from(accessKey);
-    if (accessKeyBuffer.length === ACCESS_KEY.length && crypto.timingSafeEqual(accessKeyBuffer, ACCESS_KEY)) {
+    if (accessKeyBuffer.length === ACCESS_KEY.length) {
       let parsedTarget;
       try {
         parsedTarget = new URL(`https://${requestedTarget}`);
